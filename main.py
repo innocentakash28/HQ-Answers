@@ -1,4 +1,4 @@
-import config
+
 import discord
 import asyncio
 import networking
@@ -34,7 +34,7 @@ class MyClient(discord.Client):
         # Make sure we don't respond to ourself or messages outside the channel
         # or when there is no active game
         if message.author == self.user or \
-                message.channel.id != config.CHANNEL_ID or \
+                message.channel.id != 713305013115682828 or \
                 not self.isGameLive:
             return
 
@@ -81,7 +81,7 @@ class MyClient(discord.Client):
             if broadcast:
                 self.isGameLive = True
                 socketUrl = broadcast.get('socketURL')
-                channel = self.get_channel(config.CHANNEL_ID)
+                channel = self.get_channel(713305013115682828)
 
                 # Add the websocket handler to the event loop
                 # This web socket will get the questions and answers from HQ
@@ -97,4 +97,4 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     client = MyClient()
-    client.run('vXKhuyJdUcqOusxeehBmZt_Th9UCDFtD')
+    client.run('NzEzMzAwOTQwMDg1NjU3NjI4.XseHTQ.eKBc9OoGUQpuv4QqPkJyx4lipWs')
